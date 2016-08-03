@@ -1,7 +1,0 @@
-org\ttw\basic\dao\UserDao.class
-org\ttw\basic\model\User.class
-org\ttw\basic\test\util\DbUtil.class
-org\ttw\basic\dao\TestUserDao.class
-org\ttw\basic\test\util\AbstractDbUnitTestCase.class
-org\ttw\basic\dao\IUserDao.class
-org\ttw\basic\test\util\EntitiesHelper.class
