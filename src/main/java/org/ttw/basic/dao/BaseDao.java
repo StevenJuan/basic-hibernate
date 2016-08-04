@@ -103,7 +103,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * @see org.ttw.basic.dao.BaseDaoI#list(java.lang.String,
 	 * java.lang.Object[])
 	 */
-	@Override
 	public List<T> list(String hql, Object[] args) {
 		return this.list(hql,args,null);
 	}
@@ -113,7 +112,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * 
 	 * @see org.ttw.basic.dao.BaseDaoI#list(java.lang.String, java.lang.Object)
 	 */
-	@Override
 	public List<T> list(String hql, Object arg) {
 		return this.list(hql,new Object[]{arg});
 	}
@@ -123,7 +121,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * 
 	 * @see org.ttw.basic.dao.BaseDaoI#list(java.lang.String)
 	 */
-	@Override
 	public List<T> list(String hql) {
 		return this.list(hql,null);
 	}
@@ -171,7 +168,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * java.lang.Object[], java.util.Map)
 	 */
 
-	@Override
 	public List<T> list(String hql, Object[] args, Map<String, Object> alias) {
 		hql= iniSort(hql);
 		Query query = getSession().createQuery(hql);
@@ -185,7 +181,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * 
 	 * @see org.ttw.basic.dao.BaseDaoI#list(java.lang.String, java.util.Map)
 	 */
-	@Override
 	public List<T> listByAlias(String hql, Map<String, Object> alias) {
 		return this.list(hql,null,alias);
 	}
@@ -196,7 +191,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * @see org.ttw.basic.dao.BaseDaoI#find(java.lang.String,
 	 * java.lang.Object[])
 	 */
-	@Override
 	public Pager<T> find(String hql, Object[] args) {
 		return this.find(hql,args,null);
 	}
@@ -206,7 +200,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * 
 	 * @see org.ttw.basic.dao.BaseDaoI#find(java.lang.String, java.lang.Object)
 	 */
-	@Override
 	public Pager<T> find(String hql, Object arg) {
 		return this.find(hql,new Object[]{arg});
 	}
@@ -216,7 +209,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * 
 	 * @see org.ttw.basic.dao.BaseDaoI#find(java.lang.String)
 	 */
-	@Override
 	public Pager<T> find(String hql) {
 		return this.find(hql,null);
 	}
@@ -245,7 +237,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * @see org.ttw.basic.dao.BaseDaoI#find(java.lang.String,
 	 * java.lang.Object[], java.util.Map)
 	 */
-	@Override
 	public Pager<T> find(String hql, Object[] args, Map<String, Object> alias) {
 		hql=iniSort(hql);
 		String cq = getCountHql(hql,true);
@@ -271,7 +262,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * 
 	 * @see org.ttw.basic.dao.BaseDaoI#find(java.lang.String, java.util.Map)
 	 */
-	@Override
 	public Pager<T> findByAlias(String hql, Map<String, Object> alias) {
 		return this.find(hql,null,alias);
 	}
@@ -282,7 +272,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * @see org.ttw.basic.dao.BaseDaoI#queryObject(java.lang.String,
 	 * java.lang.Object[])
 	 */
-	@Override
 	public Object queryObject(String hql, Object[] args) {
 		return this.queryObject(hql,args,null);
 	}
@@ -293,7 +282,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * @see org.ttw.basic.dao.BaseDaoI#queryObject(java.lang.String,
 	 * java.lang.Object)
 	 */
-	@Override
 	public Object queryObject(String hql, Object arg) {
 		return this.queryObject(hql,new Object[]{arg});
 	}
@@ -303,7 +291,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * 
 	 * @see org.ttw.basic.dao.BaseDaoI#queryObject(java.lang.String)
 	 */
-	@Override
 	public Object queryObject(String hql) {
 		return this.queryObject(hql,null);
 	}
@@ -314,7 +301,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * @see org.ttw.basic.dao.BaseDaoI#updateByHql(java.lang.String,
 	 * java.lang.Object[])
 	 */
-	@Override
 	public void updateByHql(String hql, Object[] args) {
 		Query query = getSession().createQuery(hql);
 		setParameter(query,args);
@@ -327,7 +313,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * @see org.ttw.basic.dao.BaseDaoI#updateByHql(java.lang.String,
 	 * java.lang.Object)
 	 */
-	@Override
 	public void updateByHql(String hql, Object arg) {
 		this.updateByHql(hql,new Object[]{arg});
 	}
@@ -337,7 +322,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * 
 	 * @see org.ttw.basic.dao.BaseDaoI#updateByHql(java.lang.String)
 	 */
-	@Override
 	public void updateByHql(String hql) {
 		this.updateByHql(hql,null);
 	}
@@ -348,7 +332,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * @see org.ttw.basic.dao.BaseDaoI#listBySql(java.lang.String,
 	 * java.lang.Object[], java.lang.Class, boolean)
 	 */
-	@Override
 	public <N extends Object>List<N> listBySql(String sql, Object[] args, Class<?> clz, boolean hasEtity) {
 		return this.listBySql(sql,args,null,clz,hasEtity);
 	}
@@ -359,7 +342,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * @see org.ttw.basic.dao.BaseDaoI#listBySql(java.lang.String,
 	 * java.lang.Object, java.lang.Class, boolean)
 	 */
-	@Override
 	public <N extends Object>List<N> listBySql(String sql, Object arg, Class<?> clz, boolean hasEtity) {
 		return this.listBySql(sql,new Object[]{arg},clz,hasEtity);
 	}
@@ -370,7 +352,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * @see org.ttw.basic.dao.BaseDaoI#listBySql(java.lang.String,
 	 * java.lang.Class, boolean)
 	 */
-	@Override
 	public <N extends Object>List<N> listBySql(String sql, Class<?> clz, boolean hasEtity) {
 		return this.listBySql(sql,null,clz,hasEtity);
 	}
@@ -381,7 +362,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * @see org.ttw.basic.dao.BaseDaoI#listBySql(java.lang.String,
 	 * java.lang.Object[], java.util.Map, java.lang.Class, boolean)
 	 */
-	@Override
 	public <N extends Object>List<N> listBySql(String sql, Object[] args, Map<String, Object> alias, Class<?> clz, boolean hasEtity) {
 		sql = iniSort(sql);
 		SQLQuery sq = getSession().createSQLQuery(sql);
@@ -401,7 +381,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * @see org.ttw.basic.dao.BaseDaoI#listBySql(java.lang.String,
 	 * java.util.Map, java.lang.Class, boolean)
 	 */
-	@Override
 	public <N extends Object>List<N> listByAliasSql(String sql, Map<String, Object> alias, Class<?> clz, boolean hasEtity) {
 		return this.listBySql(sql,null,alias,clz,hasEtity);
 	}
@@ -412,7 +391,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * @see org.ttw.basic.dao.BaseDaoI#findBySql(java.lang.String,
 	 * java.lang.Object[], java.lang.Class, boolean)
 	 */
-	@Override
 	public <N extends Object>Pager<N> findBySql(String sql, Object[] args, Class<?> clz, boolean hasEtity) {
 		return this.findBySql(sql,args,null,clz,hasEtity);
 	}
@@ -423,7 +401,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * @see org.ttw.basic.dao.BaseDaoI#findBySql(java.lang.String,
 	 * java.lang.Object, java.lang.Class, boolean)
 	 */
-	@Override
 	public <N extends Object>Pager<N> findBySql(String sql, Object arg, Class<?> clz, boolean hasEtity) {
 		return this.findBySql(sql,new Object[]{arg},clz,hasEtity);
 	}
@@ -434,7 +411,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * @see org.ttw.basic.dao.BaseDaoI#findBySql(java.lang.String,
 	 * java.lang.Class, boolean)
 	 */
-	@Override
 	public <N extends Object>Pager<N> findBySql(String sql, Class<?> clz, boolean hasEtity) {
 		return this.findBySql(sql,null,clz,hasEtity);
 	}
@@ -445,7 +421,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * @see org.ttw.basic.dao.BaseDaoI#findBySql(java.lang.String,
 	 * java.lang.Object[], java.util.Map, java.lang.Class, boolean)
 	 */
-	@Override
 	public <N extends Object>Pager<N> findBySql(String sql, Object[] args, Map<String, Object> alias, Class<?> clz, boolean hasEtity) {
 		sql = iniSort(sql);
 		String cq = getCountHql(sql,false);
@@ -476,12 +451,10 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 * @see org.ttw.basic.dao.BaseDaoI#findBySql(java.lang.String,
 	 * java.util.Map, java.lang.Class, boolean)
 	 */
-	@Override
 	public <N extends Object>Pager<N> findByAliasSql(String sql, Map<String, Object> alias, Class<?> clz, boolean hasEtity) {
 		return this.findBySql(sql,null,alias,clz,hasEtity);
 	}
 
-	@Override
 	public Object queryObject(String hql, Object[] args, Map<String, Object> alias) {
 		Query query = getSession().createQuery(hql);
 		setAliasParameter(query,alias);
@@ -489,7 +462,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 		return query.uniqueResult();
 	}
 
-	@Override
 	public Object queryObjectByAlias(String hql, Map<String, Object> alias) {
 		return this.queryObject(hql,null,alias);
 	}

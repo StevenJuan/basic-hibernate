@@ -12,7 +12,6 @@
 
 	<groupId>org.ttw.basic</groupId>
 	<artifactId>basic-hibernate</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>basic-hibernate</name>
